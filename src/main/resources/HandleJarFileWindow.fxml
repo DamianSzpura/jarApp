@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HandleJarFileWindowController">
+
+    <Pane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #424242; -fx-border-color: #6d6d6d; -fx-border-width: 2;" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <GridPane layoutX="20.0" layoutY="55.0" prefHeight="729.0" prefWidth="960.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <ListView fx:id="classItems" onMouseClicked="#classItems_showClassProperties" prefHeight="200.0" prefWidth="200.0" style="-fx-border-insets: 1;" />
+               <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1">
+                 <tabs>
+                   <Tab text="Methods">
+                     <content>
+                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="551.0" prefWidth="480.0">
+                              <children>
+                                 <ListView fx:id="tabPane_methodItems" onMouseClicked="#methodItems_showOptionsBox" prefHeight="664.0" prefWidth="480.0" />
+                              </children>
+                           </AnchorPane>
+                     </content>
+                   </Tab>
+                   <Tab text="Fields">
+                     <content>
+                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                 <ListView fx:id="tabPane_fieldItems" onMouseClicked="#fieldItems_showOptionsBox" prefHeight="664.0" prefWidth="480.0" />
+                              </children>
+                           </AnchorPane>
+                     </content>
+                   </Tab>
+                     <Tab text="Constructors">
+                        <content>
+                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                 <ListView fx:id="tabPane_constructorItems" onMouseClicked="#constructorItems_showOptionsBox" prefHeight="664.0" prefWidth="480.0" />
+                              </children>
+                           </AnchorPane>
+                        </content>
+                     </Tab>
+                 </tabs>
+               </TabPane>
+                </children>
+            </GridPane>
+            <GridPane layoutX="20.0" layoutY="14.0" prefWidth="960.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="109.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="901.0" minWidth="10.0" prefWidth="851.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <MenuBar prefHeight="25.0" prefWidth="848.0" style="-fx-background-radius: 20px; -fx-use-system-menu-bar: true;" stylesheets="@styles/style.css" GridPane.columnIndex="1">
+                        <menus>
+                     <Menu disable="true" mnemonicParsing="false" />
+                            <Menu mnemonicParsing="false" text="File">
+                        <items>
+                           <MenuItem mnemonicParsing="false" onAction="#menuBar_openFile" text="Open file" />
+                           <MenuItem fx:id="menuBar_save" disable="true" mnemonicParsing="false" onAction="#menuBar_saveFile" text="Save file" />
+                        </items></Menu>
+                            <Menu mnemonicParsing="false" text="Add new">
+                        <items>
+                                    <MenuItem fx:id="menuBar_class" disable="true" mnemonicParsing="false" onAction="#menuBar_classAdd" text="Class" />
+                           <MenuItem fx:id="menuBar_interface" disable="true" mnemonicParsing="false" onAction="#menuBar_interfaceAdd" text="Interface" />
+                           <MenuItem fx:id="menuBar_package" disable="true" mnemonicParsing="false" onAction="#menuBar_packageAdd" text="Package" />
+                           <MenuItem fx:id="menuBar_method" disable="true" mnemonicParsing="false" onAction="#menuBar_methodAdd" text="Method to selected class" />
+                           <MenuItem fx:id="menuBar_field" disable="true" mnemonicParsing="false" onAction="#menuBar_fieldAdd" text="Field to selected class" />
+                           <MenuItem fx:id="menuBar_constructor" disable="true" mnemonicParsing="false" onAction="#menuBar_constructorAdd" text="Constructor to selected class" />
+                        </items></Menu>
+                        </menus>
+                        <cursor>
+                            <Cursor fx:constant="DEFAULT" />
+                        </cursor>
+                    </MenuBar>
+                    <Label alignment="CENTER" graphicTextGap="0.0" prefHeight="16.0" prefWidth="97.0" style="-fx-background-color: ff8427; -fx-background-radius: 20PX;" text="JARAPP" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font name="Gill Sans MT" size="23.0" />
+                        </font>
+                    </Label>
+                </children>
+            </GridPane>
+         <Pane fx:id="pane_optionsBox" layoutX="866.0" layoutY="-103.0" onMouseExited="#optionsBox_hide" prefHeight="250.0" prefWidth="150.0" visible="false">
+            <children>
+               <ListView fx:id="optionsBox" layoutX="25.0" layoutY="25.0" onMouseClicked="#optionsBox_selectAction" prefHeight="200.0" prefWidth="100.0" />
+            </children>
+         </Pane>
+        </children>
+    </Pane>
+   <Pane fx:id="messagePane" layoutX="400.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-width: 2; -fx-background-color: #424242; -fx-border-color: #6d6d6d;" visible="false">
+      <children>
+         <Button layoutX="57.0" layoutY="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Okay" />
+         <Label fx:id="messagePane_textLabel" alignment="CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="132.0" prefWidth="173.0" text="Null" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+            <font>
+               <Font name="Gill Sans MT" size="11.0" />
+            </font>
+         </Label>
+      </children>
+   </Pane>
+
+</AnchorPane>
