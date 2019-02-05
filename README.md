@@ -6,7 +6,25 @@ is Project made in my univesity. Its java application where you can open and ful
 
 ## Getting Started
 
-### Installing -- working on it --
+### Installing 
+
+Download or clone repository to your pc
+```
+For this example ./Project/jarApp
+```
+
+From folder create new/import Maven project
+```
+In intelij choose import project
+Then select our folder ./Project/jarApp
+Select Maven project and then just finish
+```
+
+Run/Build application
+```
+Main app file should be here ./Project/jarApp/src/main/java/appInit.java
+```
+And done!
 
 ## Built With
 
