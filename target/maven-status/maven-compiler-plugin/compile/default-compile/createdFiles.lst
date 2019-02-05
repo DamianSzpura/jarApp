@@ -1,0 +1,10 @@
+Controllers\MessageWindowController.class
+jarHandling\JarClass.class
+jarHandling\JarField.class
+Controllers\ChangeJarItemsWindowController.class
+appInit.class
+jarHandling\JarConstructor.class
+jarHandling\JarMethod.class
+Controllers\HandleJarFileWindowController.class
+jarHandling\JarExplorer.class
+jarHandling\JarClassAttribute.class
