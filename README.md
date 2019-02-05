@@ -6,34 +6,7 @@ is Project made in my univesity. Its java application where you can open and ful
 
 ## Getting Started
 
-### Installing
-
-Create new folder, there will be our main solution file, and folder with our project code.
-```
-For project you can just create ./Project 
-```
-
-Download or clone repository to your new folder and change its name so its look like this
-```
-From
-./Project/FileServer-website/
-To
-./Project/FileServer website/
-```
-
-Cut FileServer website.sln file from folder ./Project/FileServer website into ./Project.
-```
-File should be found by this path
-./Project/FileServer website/FileServer website.sln
-```
-
-Open project with Visual Studio and write this NuGet Command Line
-```
-dotnet restore
-```
-
-Run/Build project in Visual Studio
-And done!
+### Installing -- working on it --
 
 ## Built With
 
